@@ -192,6 +192,21 @@ O projeto já cobre:
 - heurística de matching
 - fluxo final de preenchimento com DOM simulado leve
 
+## Contribuindo
+
+Contribuições são bem-vindas.
+
+Antes de abrir um PR:
+
+- leia o [guia de contribuição](./CONTRIBUTING.md);
+- siga o [código de conduta](./CODE_OF_CONDUCT.md);
+- mantenha o escopo seguro da extensão;
+- use commits com emoji no início da mensagem.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](./LICENSE).
+
 ## Privacidade e segurança
 
 - Revise periodicamente os dados salvos no popup.
