@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formly</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-body">
+    <main class="popup" aria-labelledby="popupTitle">
+      <header class="popup-header">
+        <p class="eyebrow">Preenchimento manual e seguro</p>
+        <h1 id="popupTitle">formly</h1>
+        <p class="subtitle">Salve seus dados localmente e preencha a página atual só quando quiser.</p>
+      </header>
+
+      <section class="quick-actions" aria-label="Ações rápidas">
+        <button type="button" id="fillCurrentPage" class="primary-button quick-fill-button">
+          Preencher página atual
+        </button>
+        <p class="quick-actions-hint" id="quickActionsHint">
+          Usa os dados salvos. Se você editou algo abaixo, salve antes.
+        </p>
+        <label class="debug-toggle" for="debugToggle">
+          <span class="debug-toggle__copy">
+            <strong>Modo debug</strong>
+            <small>Ativa logs detalhados para ajudar nos ajustes da heurística.</small>
+          </span>
+          <input
+            type="checkbox"
+            id="debugToggle"
+            name="debugToggle"
+            role="switch"
+            aria-describedby="quickActionsHint"
+          />
+        </label>
+        <p id="fillStatusMessage" class="status-message" aria-live="polite" role="status"></p>
+      </section>
+
+      <form id="profileForm" class="profile-form" novalidate aria-describedby="formHelperText">
+        <p id="formHelperText" class="sr-only">
+          Formulário para editar os dados locais usados pela extensão formly.
+        </p>
+
+        <section class="toolbar" aria-label="Pesquisa de campos">
+          <label class="search-field" for="fieldSearch">
+            <span>Pesquisa rápida</span>
+            <input
+              type="search"
+              id="fieldSearch"
+              name="fieldSearch"
+              placeholder="Buscar campo por nome, CPF, curso..."
+              autocomplete="off"
+              spellcheck="false"
+              enterkeyhint="search"
+              aria-describedby="quickActionsHint noResultsMessage"
+            />
+          </label>
+        </section>
+
+        <div id="sectionsContainer" class="sections-container"></div>
+
+        <div id="noResultsMessage" class="no-results" hidden aria-live="polite">
+          <strong>Nenhum campo encontrado</strong>
+          <span>Tente buscar por outro termo, como CPF, nascimento, curso ou instituição.</span>
+        </div>
+
+        <div class="actions single-action">
+          <button type="submit" class="secondary-button save-button">Salvar</button>
+        </div>
+
+        <p id="saveStatusMessage" class="status-message status-message--form" aria-live="polite" role="status"></p>
+      </form>
+    </main>
+
+    <script src="shared/popup-schema.js"></script>
+    <script src="shared/popup-search.js"></script>
+    <script src="shared/popup-runtime.js"></script>
+    <script src="shared/popup-boot.js"></script>
+    <script src="shared/content-config.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

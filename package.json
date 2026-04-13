@@ -1,0 +1,15 @@
+﻿{
+  "name": "formly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Extensão Chrome Manifest V3 para preenchimento manual e seguro de formulários.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test ./tests/popup-schema.test.js ./tests/popup-search.test.js ./tests/popup-runtime.test.js ./tests/popup-boot.test.js ./tests/content-config.test.js ./tests/content-heuristics.test.js ./tests/content-flow.test.js",
+    "test:watch": "node --test --watch ./tests/popup-schema.test.js ./tests/popup-search.test.js ./tests/popup-runtime.test.js ./tests/popup-boot.test.js ./tests/content-config.test.js ./tests/content-heuristics.test.js ./tests/content-flow.test.js",
+    "test:popup": "node --test ./tests/popup-schema.test.js ./tests/popup-search.test.js ./tests/popup-runtime.test.js ./tests/popup-boot.test.js",
+    "test:content": "node --test ./tests/content-config.test.js ./tests/content-heuristics.test.js ./tests/content-flow.test.js"
+  }
+}
